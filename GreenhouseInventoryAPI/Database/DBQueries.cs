@@ -67,5 +67,7 @@ namespace GreenhouseInventoryAPI.Database
             DataTable dt = query.SendQuery();
             return PlantID.DatatableToList(dt);
         }
+
+        //TODO Add query for retrieving PlantCare information
     }
 }

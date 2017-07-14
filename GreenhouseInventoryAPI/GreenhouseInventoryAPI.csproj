@@ -176,6 +176,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlantCareController.cs" />
     <Compile Include="Controllers\PlantIDController.cs" />
     <Compile Include="Controllers\PlantInventoryController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PlantCare.cs" />
     <Compile Include="Models\PlantID.cs" />
     <Compile Include="Models\PotChangeRequest.cs" />
     <Compile Include="Models\PotInformation.cs" />
