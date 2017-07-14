@@ -9,7 +9,7 @@ namespace GreenhouseInventoryAPI.Database
     {
         public static readonly string DatabaseName = "NKUGreenhouse";
         public static readonly string Address = "50.62.209.88";
-        public static readonly string UserName = "serafina1";
-        public static readonly string Password = "";
+        public static readonly string UserName = "admin";
+        public static readonly string Password = "password";
     }
 }
