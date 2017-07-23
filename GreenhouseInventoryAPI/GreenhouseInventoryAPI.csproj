@@ -189,6 +189,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompletePlantInformation.cs" />
     <Compile Include="Models\PlantCare.cs" />
     <Compile Include="Models\PlantID.cs" />
     <Compile Include="Models\PotChangeRequest.cs" />
