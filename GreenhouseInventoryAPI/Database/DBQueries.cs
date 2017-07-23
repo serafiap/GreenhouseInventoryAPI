@@ -67,7 +67,21 @@ namespace GreenhouseInventoryAPI.Database
             DataTable dt = query.SendQuery();
             return PlantID.DatatableToList(dt);
         }
+        
 
-        //TODO Add query for retrieving PlantCare information
+        public static List<CompletePlantInformation> PlantInformation()
+        {
+            DbQuerier query = new DbQuerier(
+                string.Format("SELECT * FROM {0} ORDER BY {1} ASC, {2} ASC",
+                Strings.Tables.PlantInformation, Strings.PlantInformationColumns.Genus, Strings.PlantInformationColumns.Species)
+                );
+            DataTable dt = query.SendQuery();
+            return CompletePlantInformation.DatatableToList(dt);
+        }
+
+        public static CompletePlantInformation PlantInformation(int plantID)
+        {
+            return PlantInformation().Find(i => i.ID == plantID.ToString());
+        }
     }
 }

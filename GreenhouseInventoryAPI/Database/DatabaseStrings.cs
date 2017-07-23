@@ -61,4 +61,24 @@ namespace GreenhouseInventoryAPI.Database.Strings
         public static string AccessCodes = "AccessCodes";
     }
 
+    public static class PlantInformationColumns
+    {
+        public static string ID = "ID";
+        public static string Genus = "Genus";
+        public static string Species = "Species";
+        public static string CommonNames = "CommonNames";
+        public static string LowWater = "LowWater";
+        public static string MedWater = "MedWater";
+        public static string HighWater = "HighWater";
+        public static string MaxHeight = "MaxHeight";
+        public static string MaxSpread = "MaxSpread";
+        public static string CuttingPropagation = "CuttingPropagation";
+        public static string DivisionPropagation = "DivisionPropagation";
+        public static string LeafPropagation = "LeafPropagation";
+        public static string Poisonous = "Poisonous";
+        public static string Sharp = "Sharp";
+        public static string Irritant = "Irritant";
+        public static string SpecialInstructions = "SpecialInstructions";
+    }
+
 }

@@ -108,8 +108,8 @@ namespace GreenhouseInventoryAPI.Models
 
     public class DbQuerier
     {
-        private string _UserName = "serafina1";
-        private string _Password = "N0m0rehax";
+        private string _UserName = DBCredentials.UserName;
+        private string _Password = DBCredentials.Password;
         //private DeviceReport _data;
 
         private string _commandText;
