@@ -15,6 +15,11 @@ namespace GreenhouseInventoryAPI.Controllers
     using ds = DatabaseStrings;
     public class PlantInventoryController : ApiController
     {
+        //TODO Add contents
+        public List<PotInformation> Get()
+        {
+            return new List<PotInformation>();
+        }
         //Request plant information by barcode ID
         public List<PotInformation> Get(int id)
         {

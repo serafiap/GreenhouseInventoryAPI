@@ -110,20 +110,8 @@ namespace GreenhouseInventoryAPI.Models
     {
         private string _UserName = DBCredentials.UserName;
         private string _Password = DBCredentials.Password;
-        //private DeviceReport _data;
-
         private string _commandText;
-
-        //public DbDataPoster(string username, string password, DeviceReport deviceReport)
-        //{
-        //    _UserName = username;
-        //    _Password = password;
-        //    _data = deviceReport;
-
-        //    _commandText = string.Format("INSERT INTO `Measurements` (`systemID`, `coarseLevel`, `temp1`, `temp2`, `temp3`, `sonicLevel`) VALUES('1', '{0}', '{1}', '{2}', '{3}', '{4}')",
-        //        Enum.GetName(typeof(Level), _data.CoarseWaterLevel), _data.Temperature1, _data.Temperature2, _data.Temperature3, _data.SonicWaterDepth);
-        //}
-
+        
         public DbQuerier(string query)
         {
             _commandText = query;
@@ -177,7 +165,6 @@ namespace GreenhouseInventoryAPI.Models
                             // Connection is actively doing something else
 
                             break;
-
                     }
                     
                 }
