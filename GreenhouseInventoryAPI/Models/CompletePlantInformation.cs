@@ -49,6 +49,7 @@ namespace GreenhouseInventoryAPI.Models
                             MaxSpread = row[ds.MaxSpread].ToString(),
                             CuttingPropagation = row[ds.CuttingPropagation].ToString(),
                             DivisionPropagation = row[ds.DivisionPropagation].ToString(),
+                            LeafPropagation = row[ds.LeafPropagation].ToString(),
                             Poisonous = row[ds.Poisonous].ToString(),
                             Sharp = row[ds.Sharp].ToString(),
                             Irritant = row[ds.Irritant].ToString(),
