@@ -9,6 +9,7 @@ namespace GreenhouseInventoryAPI.Models
     using ds = Database.DatabaseStrings;
     public class PotInformation
     {
+        public string Barcode;
         public int PlantID;
         public string Genus;
         public string Species;
@@ -44,6 +45,7 @@ namespace GreenhouseInventoryAPI.Models
                     foreach (DataRow row in dt.Rows)
                     {
                         var potInformation = new PotInformation(
+
                             row[ds.ID].ToString(),
                             row[ds.Genus].ToString(),
                             row[ds.Species].ToString(),
@@ -52,6 +54,9 @@ namespace GreenhouseInventoryAPI.Models
                             row[ds.LastFert].ToString(),
                             row[ds.LastRepot].ToString()
                         );
+                        if (dt.Columns.Contains(ds.Barcode))
+                            potInformation.Barcode = row[ds.Barcode].ToString();
+
                         informationList.Add(potInformation);
                     }
 

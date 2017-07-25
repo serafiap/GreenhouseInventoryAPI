@@ -21,7 +21,7 @@ namespace GreenhouseInventoryAPI.Database
         {
             DbQuerier query = new DbQuerier(
                 string.Format("SELECT {0}, {1}, {2},{3}, {4}, {5}, {6}, {7} ",
-                ds.PIID, ds.PIGenus, ds.PISpecies, ds.PICommNames, ds.CPDatePlanted, ds.CPLastRepot, ds.CPLastFert, ds.PIID) +
+                ds.Barcode, ds.PIGenus, ds.PISpecies, ds.PICommNames, ds.CPDatePlanted, ds.CPLastRepot, ds.CPLastFert, ds.PIID) +
                 string.Format("FROM {0} INNER JOIN {1} ", ds.CurrentPlants, ds.PlantInformation) +
                 string.Format("ON {0} = {1} ", ds.CPPlantID, ds.PIID) +
                 string.Format("WHERE ({1} = {0} AND {2} = true) ", BarcodeNumber, ds.CPBarcode, ds.CPActive) +
@@ -39,7 +39,7 @@ namespace GreenhouseInventoryAPI.Database
         {
             DbQuerier query = new DbQuerier(
                 string.Format("SELECT {0}, {1}, {2},{3}, {4}, {5}, {6}, {7} ",
-                ds.PIID, ds.PIGenus, ds.PISpecies, ds.PICommNames, ds.CPDatePlanted, ds.CPLastRepot, ds.CPLastFert, ds.PIID) +
+                ds.CPBarcode, ds.PIGenus, ds.PISpecies, ds.PICommNames, ds.CPDatePlanted, ds.CPLastRepot, ds.CPLastFert, ds.PIID) +
                 string.Format("FROM {0} INNER JOIN {1} ", ds.CurrentPlants, ds.PlantInformation) +
                 string.Format("ON {0} = {1} ", ds.CPPlantID, ds.PIID) +
                 string.Format("WHERE {0} = true ", ds.CPActive) +

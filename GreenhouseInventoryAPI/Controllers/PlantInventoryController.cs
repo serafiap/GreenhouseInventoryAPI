@@ -18,7 +18,7 @@ namespace GreenhouseInventoryAPI.Controllers
         //TODO Add contents
         public List<PotInformation> Get()
         {
-            return new List<PotInformation>();
+            return DBQueries.CurrentActiveInventory();
         }
         //Request plant information by barcode ID
         public List<PotInformation> Get(int id)
@@ -27,7 +27,8 @@ namespace GreenhouseInventoryAPI.Controllers
             {
                 return new List<PotInformation>() { DBQueries.PotInfo(id) };
             }
-            return DBQueries.CurrentActiveInventory();
+            //return DBQueries.CurrentActiveInventory();
+            return new List<PotInformation>();
         }
 
         public int Post([FromBody] string json)
