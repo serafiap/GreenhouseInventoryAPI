@@ -21,14 +21,14 @@ namespace GreenhouseInventoryAPI.Controllers
             return DBQueries.CurrentActiveInventory();
         }
         //Request plant information by barcode ID
-        public List<PotInformation> Get(int id)
+        public PotInformation Get(int id)
         {
             if (id > 0)
             {
-                return new List<PotInformation>() { DBQueries.PotInfo(id) };
+                return DBQueries.PotInfo(id);
             }
             //return DBQueries.CurrentActiveInventory();
-            return new List<PotInformation>();
+            return new PotInformation();
         }
 
         public int Post([FromBody] string json)
