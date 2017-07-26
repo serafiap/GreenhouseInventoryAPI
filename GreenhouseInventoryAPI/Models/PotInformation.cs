@@ -46,7 +46,7 @@ namespace GreenhouseInventoryAPI.Models
                     {
                         var potInformation = new PotInformation(
 
-                            row[ds.ID].ToString(),
+                            row[ds.PlantID].ToString(),
                             row[ds.Genus].ToString(),
                             row[ds.Species].ToString(),
                             row[ds.CommonNames].ToString(),
