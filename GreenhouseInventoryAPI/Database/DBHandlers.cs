@@ -135,6 +135,7 @@ namespace GreenhouseInventoryAPI.Models
         public DataTable SendQuery()
         {
             DataTable dt = new DataTable();
+            //dt.PrimaryKey = new DataColumn[] { dt.Columns[0]};
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try

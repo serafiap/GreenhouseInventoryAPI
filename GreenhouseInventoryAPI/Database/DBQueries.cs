@@ -21,8 +21,8 @@ namespace GreenhouseInventoryAPI.Database
         public static List<PotInformation> CurrentActiveInventory()
         {
             DbQuerier query = new DbQuerier(
-                string.Format("SELECT {0}, {1}, {2},{3}, {4}, {5}, {6}, {7} ",
-                ds.CPBarcode, ds.PIGenus, ds.PISpecies, ds.PICommNames, ds.CPDatePlanted, ds.CPLastRepot, ds.CPLastFert, ds.PIID) +
+                string.Format("SELECT {0}, {1}, {2},{3}, {4}, {5}, {6}, {7}, {8} ",
+                ds.CPID, ds.CPBarcode, ds.PIGenus, ds.PISpecies, ds.PICommNames, ds.CPDatePlanted, ds.CPLastRepot, ds.CPLastFert, ds.PIID) +
                 string.Format("FROM {0} INNER JOIN {1} ", ds.CurrentPlants, ds.PlantInformation) +
                 string.Format("ON {0} = {1} ", ds.CPPlantID, ds.PIID) +
                 string.Format("WHERE {0} = true ", ds.CPActive) +
