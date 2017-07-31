@@ -32,6 +32,7 @@ namespace GreenhouseInventoryAPI.Database
         public static string PlantID = "PlantID";
         public static string Active = "Active";
         public static string Barcode = "Barcode";
+        public static string Location = "Location";
 
         public static string CPID = CurrentPlants + ".ID";
         public static string CPDatePlanted = CurrentPlants + ".DatePlanted";

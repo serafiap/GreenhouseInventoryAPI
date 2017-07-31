@@ -11,23 +11,24 @@ namespace GreenhouseInventoryAPI.Models
     {
         public string Barcode;
         public int PlantID;
-        public string Genus;
-        public string Species;
-        public List<string> CommonNames;
-        public DateTime DatePlanted;
-        public DateTime LastRepot;
-        public DateTime LastFertillized;
+        public int Location;
+        //public string Genus;
+        //public string Species;
+        //public List<string> CommonNames;
+        //public DateTime DatePlanted;
+        //public DateTime LastRepot;
+        //public DateTime LastFertillized;
 
-        public PotInformation (string plantID, string genus, string species, string commonName, string datePlanted, string lastRepot, string lastFertillized)
-        {
-            PlantID = Convert.ToInt32(plantID);
-            Genus = genus;
-            Species = species;
-            CommonNames = commonName.Split(';').ToList<string>();
-            DateTime.TryParse(datePlanted, out DatePlanted);
-            DateTime.TryParse(lastRepot, out LastRepot);
-            DateTime.TryParse(lastFertillized, out LastFertillized);
-        }
+        //public PotInformation (string plantID, string genus, string species, string commonName, string datePlanted, string lastRepot, string lastFertillized)
+        //{
+        //    PlantID = Convert.ToInt32(plantID);
+        //    Genus = genus;
+        //    Species = species;
+        //    CommonNames = commonName.Split(';').ToList<string>();
+        //    DateTime.TryParse(datePlanted, out DatePlanted);
+        //    DateTime.TryParse(lastRepot, out LastRepot);
+        //    DateTime.TryParse(lastFertillized, out LastFertillized);
+        //}
 
         public PotInformation()
         {
@@ -44,18 +45,24 @@ namespace GreenhouseInventoryAPI.Models
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        var potInformation = new PotInformation(
+                        var potInformation = new PotInformation()
+                        {
+                            Barcode = row[ds.Barcode].ToString(),
+                            PlantID = Convert.ToInt32(row[ds.PlantID].ToString()),
+                            Location = Convert.ToInt16(row[ds.Location].ToString())
+                        };
+                        //var potInformation = new PotInformation(
 
-                            row[ds.PlantID].ToString(),
-                            row[ds.Genus].ToString(),
-                            row[ds.Species].ToString(),
-                            row[ds.CommonNames].ToString(),
-                            row[ds.DatePlanted].ToString(),
-                            row[ds.LastFert].ToString(),
-                            row[ds.LastRepot].ToString()
-                        );
-                        if (dt.Columns.Contains(ds.Barcode))
-                            potInformation.Barcode = row[ds.Barcode].ToString();
+                        //    row[ds.PlantID].ToString(),
+                        //    //row[ds.Genus].ToString(),
+                        //    //row[ds.Species].ToString(),
+                        //    //row[ds.CommonNames].ToString(),
+                        //    //row[ds.DatePlanted].ToString(),
+                        //    //row[ds.LastFert].ToString(),
+                        //    //row[ds.LastRepot].ToString()
+                        //);
+                        //if (dt.Columns.Contains(ds.Barcode))
+                        //    potInformation.Barcode = row[ds.Barcode].ToString();
 
                         informationList.Add(potInformation);
                     }
