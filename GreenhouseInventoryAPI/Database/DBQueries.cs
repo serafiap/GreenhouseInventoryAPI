@@ -90,5 +90,11 @@ namespace GreenhouseInventoryAPI.Database
         {
             return PlantInformation().Find(i => i.ID == plantID.ToString());
         }
+
+        public static bool CheckAccess(int AccessCode)
+        {
+            //TODO Add AccessCode Query
+            return true;
+        }
     }
 }
