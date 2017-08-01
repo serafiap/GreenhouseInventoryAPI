@@ -180,6 +180,7 @@
     <Compile Include="Controllers\PlantInformationController.cs" />
     <Compile Include="Controllers\PlantIDController.cs" />
     <Compile Include="Controllers\PlantInventoryController.cs" />
+    <Compile Include="Controllers\RemoveBarcodeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Database\DatabaseStrings.cs" />
     <Compile Include="Database\DBCredentials.cs" />
@@ -191,6 +192,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BarcodeAssignmentModel.cs" />
+    <Compile Include="Models\BarcodeRemovalModel.cs" />
     <Compile Include="Models\CompletePlantInformation.cs" />
     <Compile Include="Models\PlantID.cs" />
     <Compile Include="Models\PotChangeRequest.cs" />

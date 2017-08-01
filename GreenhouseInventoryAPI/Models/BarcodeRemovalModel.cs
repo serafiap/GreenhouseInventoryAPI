@@ -5,11 +5,9 @@ using System.Web;
 
 namespace GreenhouseInventoryAPI.Models
 {
-    public class BarcodeAssignmentModel
+    public class BarcodeRemovalModel
     {
         public int Barcode = 0;
-        public int PlantID = 0;
-        public int Location = 0;
         public int AccessCode = 0;
     }
 }

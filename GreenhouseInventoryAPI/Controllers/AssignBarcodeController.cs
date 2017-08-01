@@ -19,7 +19,7 @@ namespace GreenhouseInventoryAPI.Controllers
             {
                 if (assignment.PlantID > 0)
                 {
-                    //TODO Method for inserting
+                    //TODO Method for inserting barcode and checking access code
                     return 1;
                 }
                 return -1; //Improper plant ID
