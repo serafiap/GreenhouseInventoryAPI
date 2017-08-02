@@ -15,17 +15,20 @@ namespace GreenhouseInventoryAPI.Controllers
         public int Post ([FromBody] string json)
         {
             BarcodeAssignmentModel assignment = JsonConvert.DeserializeObject<BarcodeAssignmentModel>(json);
-            if (DBQueries.PotInfo(assignment.Barcode) == new PotInformation())
+            if (DBQueries.CheckAccess(assignment.AccessCode))
             {
-                if (assignment.PlantID > 0)
+                if (DBQueries.PotInfo(assignment.Barcode) == new PotInformation())
                 {
-                    //TODO Method for inserting barcode and checking access code
-                    return 1;
+                    if (DBQueries.PlantInformation(assignment.PlantID) != new CompletePlantInformation())
+                    {
+                        return DBQueries.AssignBarcode(assignment);//1 if success, -500 if not
+                    }
+                    return -3; //Improper plant ID
                 }
-                return -1; //Improper plant ID
+
+                return -1; //Barcode already exists 
             }
-                    
-            return -2; //Barcode already exists
+            return -100; //Access not correct
         }
     }
 }

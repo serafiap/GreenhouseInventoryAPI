@@ -91,6 +91,39 @@ namespace GreenhouseInventoryAPI.Database
             return PlantInformation().Find(i => i.ID == plantID.ToString());
         }
 
+        public static int AssignBarcode(BarcodeAssignmentModel assignment)
+        {
+            try
+            {
+                DbNonQuerier query = new DbNonQuerier(
+                        string.Format("INSERT INTO {0} ({1}, {2}, {3}) ", Strings.Tables.CurrentPlants, ds.Barcode, ds.PlantID, ds.Location) +
+                        string.Format("VALUES ({0}, {1}, {3}", assignment.Barcode, assignment.PlantID, assignment.Location)
+                        );
+                query.SendNonQuery();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return -500;
+            }
+        }
+
+        public static int DeleteBarcode(BarcodeRemovalModel remover)
+        {
+            try
+            {
+                DbNonQuerier query = new DbNonQuerier(
+                        string.Format("DELETE FROM {0} WHERE {1} = {2}", Strings.Tables.CurrentPlants, ds.Barcode, remover.Barcode)
+                        );
+                query.SendNonQuery();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return -500;
+            }
+        }
+
         public static bool CheckAccess(int AccessCode)
         {
             //TODO Add AccessCode Query
