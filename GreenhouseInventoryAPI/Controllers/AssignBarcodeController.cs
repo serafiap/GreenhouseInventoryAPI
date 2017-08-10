@@ -17,9 +17,10 @@ namespace GreenhouseInventoryAPI.Controllers
             BarcodeAssignmentModel assignment = JsonConvert.DeserializeObject<BarcodeAssignmentModel>(json);
             if (DBQueries.CheckAccess(assignment.AccessCode))
             {
-                if (DBQueries.PotInfo(assignment.Barcode) == new PotInformation())
+                var existingID = DBQueries.PotInfo(assignment.Barcode);
+                if (existingID == null)
                 {
-                    if (DBQueries.PlantInformation(assignment.PlantID) != new CompletePlantInformation())
+                    if (DBQueries.PlantInformation(assignment.PlantID) != null)
                     {
                         return DBQueries.AssignBarcode(assignment);//1 if success, -500 if not
                     }

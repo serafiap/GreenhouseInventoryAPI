@@ -97,12 +97,12 @@ namespace GreenhouseInventoryAPI.Database
             {
                 DbNonQuerier query = new DbNonQuerier(
                         string.Format("INSERT INTO {0} ({1}, {2}, {3}) ", Strings.Tables.CurrentPlants, ds.Barcode, ds.PlantID, ds.Location) +
-                        string.Format("VALUES ({0}, {1}, {3}", assignment.Barcode, assignment.PlantID, assignment.Location)
+                        string.Format("VALUES ({0}, {1}, {2})", assignment.Barcode, assignment.PlantID, assignment.Location)
                         );
                 query.SendNonQuery();
                 return 1;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return -500;
             }

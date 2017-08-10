@@ -69,13 +69,13 @@ namespace GreenhouseInventoryAPI.Models
 
                     return informationList;
                 }
+                return new List<PotInformation>() { new PotInformation() };
             }
             catch (Exception)
             {
 
                 return new List<PotInformation>() { new PotInformation()};
             }
-            return new List<PotInformation>() { new PotInformation() };
         }
     }
 
