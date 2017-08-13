@@ -19,7 +19,7 @@ namespace GreenhouseInventoryAPI.Controllers
             {
                 if (DBQueries.PotInfo(relocator.Barcode) != null)
                 {
-
+                    return DBQueries.RelocateBarcode(relocator);
                 }
                 return (int)ErrorCodes.BarcodeDoesNotExist;
             }
