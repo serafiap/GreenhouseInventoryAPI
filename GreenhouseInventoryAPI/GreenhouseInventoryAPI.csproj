@@ -175,18 +175,20 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AssignBarcodeController.cs" />
-    <Compile Include="Controllers\ChangeBarcodeController.cs" />
+    <Compile Include="Controllers\Barcode Modification\AssignBarcodeController.cs" />
+    <Compile Include="Controllers\Barcode Modification\ChangeBarcodeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantInformationController.cs" />
     <Compile Include="Controllers\PlantIDController.cs" />
     <Compile Include="Controllers\PlantInventoryController.cs" />
-    <Compile Include="Controllers\RemoveBarcodeController.cs" />
+    <Compile Include="Controllers\Barcode Modification\RemoveBarcodeController.cs" />
+    <Compile Include="Controllers\RelocateBarcodeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Database\DatabaseStrings.cs" />
     <Compile Include="Database\DBCredentials.cs" />
     <Compile Include="Database\DBHandlers.cs" />
     <Compile Include="Database\DBQueries.cs" />
+    <Compile Include="Database\ErrorCodes.cs" />
     <Compile Include="Database\IDatabaseConnector.cs" />
     <Compile Include="Database\MySqlDBConnector.cs" />
     <Compile Include="Global.asax.cs">
@@ -194,6 +196,7 @@
     </Compile>
     <Compile Include="Models\BarcodeAssignmentModel.cs" />
     <Compile Include="Models\BarcodeChangeModel.cs" />
+    <Compile Include="Models\BarcodeRelocationModel.cs" />
     <Compile Include="Models\BarcodeRemovalModel.cs" />
     <Compile Include="Models\CompletePlantInformation.cs" />
     <Compile Include="Models\PlantID.cs" />

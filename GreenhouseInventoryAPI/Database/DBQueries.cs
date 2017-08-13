@@ -100,11 +100,11 @@ namespace GreenhouseInventoryAPI.Database
                         string.Format("VALUES ({0}, {1}, {2})", assignment.Barcode, assignment.PlantID, assignment.Location)
                         );
                 query.SendNonQuery();
-                return 1;
+                return (int)ErrorCodes.Success;
             }
             catch (Exception e)
             {
-                return -500;
+                return (int)ErrorCodes.SQLError;
             }
         }
 
@@ -121,6 +121,23 @@ namespace GreenhouseInventoryAPI.Database
             catch (Exception)
             {
                 return -500;
+            }
+        }
+
+        public static int RelocateBarcode(BarcodeRelocationModel relocator)
+        {
+            try
+            {
+                DbNonQuerier query = new DbNonQuerier(
+                    string.Format("UPDATE {0} SET {1} = {2} WHERE {3} = {4}", Strings.Tables.CurrentPlants, ds.Location, relocator.Location,
+                                                                              ds.Barcode, relocator.Barcode)
+                    );
+                query.SendNonQuery();
+                return (int)ErrorCodes.Success;
+            }
+            catch (Exception e)
+            {
+                return (int)ErrorCodes.SQLError;
             }
         }
 
