@@ -182,7 +182,7 @@
     <Compile Include="Controllers\PlantIDController.cs" />
     <Compile Include="Controllers\PlantInventoryController.cs" />
     <Compile Include="Controllers\Barcode Modification\RemoveBarcodeController.cs" />
-    <Compile Include="Controllers\RelocateBarcodeController.cs" />
+    <Compile Include="Controllers\Barcode Modification\RelocateBarcodeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Database\DatabaseStrings.cs" />
     <Compile Include="Database\DBCredentials.cs" />
@@ -194,10 +194,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BarcodeAssignmentModel.cs" />
-    <Compile Include="Models\BarcodeChangeModel.cs" />
-    <Compile Include="Models\BarcodeRelocationModel.cs" />
-    <Compile Include="Models\BarcodeRemovalModel.cs" />
+    <Compile Include="Models\Barcode Modification\BarcodeAssignmentModel.cs" />
+    <Compile Include="Models\Barcode Modification\BarcodeChangeModel.cs" />
+    <Compile Include="Models\Barcode Modification\BarcodeRelocationModel.cs" />
+    <Compile Include="Models\Barcode Modification\BarcodeRemovalModel.cs" />
     <Compile Include="Models\CompletePlantInformation.cs" />
     <Compile Include="Models\PlantID.cs" />
     <Compile Include="Models\PotChangeRequest.cs" />

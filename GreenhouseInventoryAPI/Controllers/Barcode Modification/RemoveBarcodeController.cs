@@ -21,9 +21,9 @@ namespace GreenhouseInventoryAPI.Controllers
                 {
                     return DBQueries.DeleteBarcode(remover);//1 if success, -500 if fail
                 }
-                return -2;//Nothing to delete
+                return (int)ErrorCodes.BarcodeDoesNotExist;//Nothing to delete
             }
-            return -100; //Access code issue
+            return (int)ErrorCodes.AccessError; //Access code issue
         }
     }
 }

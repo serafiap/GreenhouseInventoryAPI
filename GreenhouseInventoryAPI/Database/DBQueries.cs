@@ -116,11 +116,11 @@ namespace GreenhouseInventoryAPI.Database
                         string.Format("DELETE FROM {0} WHERE {1} = {2}", Strings.Tables.CurrentPlants, ds.Barcode, remover.Barcode)
                         );
                 query.SendNonQuery();
-                return 1;
+                return (int) ErrorCodes.Success;
             }
             catch (Exception)
             {
-                return -500;
+                return (int) ErrorCodes.SQLError;
             }
         }
 

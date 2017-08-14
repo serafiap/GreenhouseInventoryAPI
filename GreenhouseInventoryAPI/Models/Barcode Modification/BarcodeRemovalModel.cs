@@ -9,7 +9,5 @@ namespace GreenhouseInventoryAPI.Models
     {
         public int Barcode = 0;
         public int AccessCode = 0;
-
-
     }
 }
