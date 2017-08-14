@@ -17,7 +17,7 @@ namespace GreenhouseInventoryAPI.Controllers
             var remover = JsonConvert.DeserializeObject<BarcodeRemovalModel>(json);
             if (DBQueries.CheckAccess(remover.AccessCode))
             {
-                if (DBQueries.PotInfo(remover.Barcode) != new PotInformation())
+                if (DBQueries.PotInfo(remover.Barcode) != null)
                 {
                     return DBQueries.DeleteBarcode(remover);//1 if success, -500 if fail
                 }
