@@ -143,8 +143,15 @@ namespace GreenhouseInventoryAPI.Database
 
         public static bool CheckAccess(int AccessCode)
         {
+
             //TODO Add AccessCode Query
-            return true;
+            DbQuerier query = new DbQuerier(
+                string.Format(
+                    "SELECT EXISTS(SELECT * FROM {0} WHERE {1} = {2}",
+                    Strings.Tables.AccessCodes, Strings.AccessCodesColumns.Code, AccessCode
+                    ));
+            var results = query.SendQuery();
+            return (results.Rows.Count > 0);
         }
     }
 }

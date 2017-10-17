@@ -10,5 +10,6 @@ namespace GreenhouseInventoryAPI.Models
         public int AccessCode = 0;
         public int Barcode = 0;
         public int Location = 0;
+        public string User = "";
     }
 }

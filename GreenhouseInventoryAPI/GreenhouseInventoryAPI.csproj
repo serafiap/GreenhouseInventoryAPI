@@ -177,6 +177,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Barcode Modification\AssignBarcodeController.cs" />
     <Compile Include="Controllers\Barcode Modification\ChangeBarcodeController.cs" />
+    <Compile Include="Controllers\CheckAccessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantInformationController.cs" />
     <Compile Include="Controllers\PlantIDController.cs" />
@@ -194,10 +195,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccessModel.cs" />
     <Compile Include="Models\Barcode Modification\BarcodeAssignmentModel.cs" />
     <Compile Include="Models\Barcode Modification\BarcodeChangeModel.cs" />
     <Compile Include="Models\Barcode Modification\BarcodeRelocationModel.cs" />
     <Compile Include="Models\Barcode Modification\BarcodeRemovalModel.cs" />
+    <Compile Include="Models\Barcode Modification\IBarcodeModifier.cs" />
     <Compile Include="Models\CompletePlantInformation.cs" />
     <Compile Include="Models\PlantID.cs" />
     <Compile Include="Models\PotChangeRequest.cs" />

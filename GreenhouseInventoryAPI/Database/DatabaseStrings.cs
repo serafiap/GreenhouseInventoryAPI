@@ -82,4 +82,9 @@ namespace GreenhouseInventoryAPI.Database.Strings
         public static string SpecialInstructions = "SpecialInstructions";
     }
 
+    public static class AccessCodesColumns
+    {
+        public static string Code = "Code";
+    }
+
 }
