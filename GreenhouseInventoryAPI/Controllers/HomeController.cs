@@ -15,5 +15,16 @@ namespace GreenhouseInventoryAPI.Controllers
 
             return View();
         }
+
+        public ActionResult PlantIDSubmission()
+        {
+            ViewBag.Title = "Search for ID";
+            return View();
+        }
+
+        public ActionResult Table()
+        {
+            return View(new List<string>());
+        }
     }
 }

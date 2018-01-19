@@ -1,0 +1,79 @@
+﻿
+@model GreenhouseInventoryAPI.Models.PlantID
+
+
+<div>
+    <h4>PlantID</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<form method="post">
+    <fieldset>
+        <legend>Add Customer</legend>
+        <div>
+            <label for="Genus">Genus:</label>
+            <input type="text" name="Genus" value="" />
+        </div>
+        <div>
+            <label for="Species">Species:</label>
+            <input type="text" name="Species" value="" />
+        </div>
+        <div>
+            <label for="CommonName">Common Name:</label>
+            <input type="text" name="CommonName" value="" />
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+    </fieldset>
+</form>
+
+@using GreenhouseInventoryAPI.Models 
+@using GreenhouseInventoryAPI.Database
+@{ 
+
+    string restructuredCommonNames = "";
+    if (IsPost)
+    {
+        PlantID search = new PlantID()
+        {
+            Genus = Request.Form["Genus"],
+            Species = Request.Form["Species"],
+            CommonNames = new List<string>() { Request.Form["CommonName"]}
+
+        };
+
+        List<PlantID> matchedPlants = DBQueries.SearchForPlantID(search);
+        matchedPlants = matchedPlants.OrderBy(i => i.Species).OrderBy(i => i.Genus).ToList();
+
+
+        <table style="border-spacing: 10px;border-collapse: separate">
+                <tr>
+                    <th>ID</th>
+                    <th>Genus</th>
+                    <th>Species</th>
+                    <th>Common Names</th>
+                </tr>
+                @foreach (var item in matchedPlants)
+                {
+                    restructuredCommonNames = "";
+                        <tr>
+                            <td>@item.PlantIDNumber</td>
+                            <td>@item.Genus</td>
+                            <td>@item.Species</td>
+                            @{restructuredCommonNames = string.Join(", ", item.CommonNames);}
+                            <td>@restructuredCommonNames</td>
+                            
+                            <!-- <tr>@item.CommonNames</tr> -->
+                        </tr>
+                    }
+        </table>
+
+    }
+}
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
