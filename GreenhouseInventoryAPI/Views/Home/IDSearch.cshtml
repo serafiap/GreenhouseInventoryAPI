@@ -1,0 +1,106 @@
+﻿@model GreenhouseInventoryAPI.Models.CompletePlantInformation
+
+@{
+    ViewBag.Title = "IDSearch";
+    string irritantColor = "";
+    string poisonousColor = "";
+    string sharpColor = "";
+
+    if (Model.Irritant == true.ToString())
+    {
+        irritantColor = "background-color:red";
+    }
+    if (Model.Poisonous == true.ToString())
+    {
+        poisonousColor = "background-color:red";
+    }
+    if (Model.Sharp == true.ToString())
+    {
+        sharpColor = "background-color:red";
+    }
+
+    string imageDirectory = Server.MapPath(@"~\Images\PlantImages\");
+    var availableImages = System.IO.Directory.GetFiles(imageDirectory).ToList();
+    var relevantImages = availableImages.FindAll(i => i.Contains(Model.ID.PadLeft(4, '0') + "-"));
+
+
+}
+
+<h2>IDSearch</h2>
+
+<div>
+    <h4>CompletePlantInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<table >
+    <tr>
+        <th>Image</th>
+        <td>
+            @foreach(var item in relevantImages)
+            {
+                string image = item.Replace(Server.MapPath("~"), "\\");
+                <a href="@image"><img src="@image" style="max-height:200px; border:2px solid black"/></a>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <td>@Model.ID</td>
+    </tr>
+    <tr>
+        <th>Genus:</th>
+        <td>@Model.Genus </td>
+    </tr>
+    <tr>
+        <th>Species:</th>
+        <td>@Model.Species</td>
+    </tr>
+    <tr>
+        <th>Common Names:</th>
+        <td>@Model.CommonNames.Replace(";", ", ")</td>
+    </tr>
+    <tr>
+        <th>High Water:</th>
+        <td>@Model.HighWater</td>
+    </tr>
+    <tr>
+        <th>Mediume Water:</th>
+        <td>@Model.MedWater</td>
+    </tr>
+    <tr>
+        <th>Low Water:</th>
+        <td>@Model.LowWater</td>
+    </tr>
+    <tr>
+        <th>Irritant</th>
+        <td  style="@irritantColor"> @Model.Irritant</td>
+    </tr>
+    <tr>
+        <th>Poisonous:</th>
+        <td style="@poisonousColor">@Model.Poisonous</td>
+    </tr>
+    <tr>
+        <th>Sharp</th>
+        <td style="@sharpColor">@Model.Sharp</td>
+    </tr>
+</table>
+<!--
+<p>
+    ID#: @Model.ID<br/>
+    Genus:        @Model.Genus<br/>
+    Species:      @Model.Species<br/>
+    Common Names: @Model.CommonNames.Replace(";", ", ")<br />
+    High Water:   @Model.HighWater<br />
+    Medium Water: @Model.MedWater<br />
+    Low Water:    @Model.LowWater<br />
+    Irritant: @Model.Irritant <br />
+    Poisonous: @Model.Poisonous <br />
+    Sharp: @Model.Sharp <br />
+</p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+    -->

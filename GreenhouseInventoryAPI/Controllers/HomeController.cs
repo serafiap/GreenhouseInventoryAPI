@@ -26,5 +26,16 @@ namespace GreenhouseInventoryAPI.Controllers
         {
             return View(new List<string>());
         }
+
+        
+        public ActionResult IDSearch(object id)
+        {
+            if (!(id is IConvertible))
+                id = 0;
+            var plantInfo = Database.DBQueries.PlantInformation(Convert.ToInt32(id));
+            if (plantInfo == null)
+                plantInfo = new Models.CompletePlantInformation();
+            return View( plantInfo );
+        }
     }
 }

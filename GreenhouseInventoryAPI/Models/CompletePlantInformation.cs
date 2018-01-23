@@ -9,22 +9,22 @@ namespace GreenhouseInventoryAPI.Models
     using ds = GreenhouseInventoryAPI.Database.Strings.PlantInformationColumns;
     public class CompletePlantInformation
     {
-        public string ID;
-        public string Genus;
-        public string Species;
-        public string CommonNames;
-        public string LowWater;
-        public string MedWater;
-        public string HighWater;
-        public string MaxHeight;
-        public string MaxSpread;
-        public string CuttingPropagation;
-        public string DivisionPropagation;
-        public string LeafPropagation;
-        public string Poisonous;
-        public string Sharp;
-        public string Irritant;
-        public string SpecialInstructions;
+        public string ID = "";
+        public string Genus ="";
+        public string Species = "";
+        public string CommonNames = "";
+        public string LowWater = "";
+        public string MedWater = "";
+        public string HighWater = "";
+        public string MaxHeight = "";
+        public string MaxSpread = "";
+        public string CuttingPropagation = "";
+        public string DivisionPropagation = "";
+        public string LeafPropagation = "";
+        public string Poisonous = "";
+        public string Sharp = "";
+        public string Irritant = "";
+        public string SpecialInstructions = "";
 
         public static List<CompletePlantInformation> DatatableToList(DataTable dt)
         {
